@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:local="clr-namespace:DataGrid_Columns"
+             x:Class="DataGrid_Columns.MainPage">
+    
+    <ContentPage.BindingContext>
+        <local:OrderInfoRepo />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Add" Clicked="Button_Clicked_1" Margin="3" />
+            <Button Text="Edit" Clicked="Button_Clicked_2" Margin="3" />
+            <Button Text="Remove" Clicked="Button_Clicked_3" Margin="3" />
+            <Button Text="Clear" Clicked="Button_Clicked_4" Margin="3" />
+        </StackLayout>
+
+        <syncfusion:SfDataGrid x:Name="dataGrid" ItemsSource="{Binding Orders}"
+                               ColumnWidthMode="FitByHeader"
+                               AutoGenerateColumnsMode="None" >
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:DataGridNumericColumn MappingName="OrderID" HeaderText="Order ID"/>
+                <syncfusion:DataGridTextColumn MappingName="Customer" HeaderText="Customer"/>
+                <syncfusion:DataGridCheckBoxColumn MappingName="IsShipped" HeaderText="Is Shipped"/>
+                <syncfusion:DataGridDateColumn MappingName="ShipTime" HeaderText="Ship Time"/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+
+    </StackLayout>
+
+</ContentPage>
