@@ -45,8 +45,6 @@ public partial class MainPage : ContentPage
 			e.Column.HeaderText = "Order ID";
 		else if (e.Column.MappingName == "IsShipped")
 			e.Column.HeaderText = "Is Shipped";
-		else if (e.Column.MappingName == "CustomerID")
-			e.Column.HeaderText = "Customer ID";
 		else if (e.Column.MappingName == "ShipTime")
 			e.Column.HeaderText = "Ship Time";
 		else if (e.Column.MappingName == "ShipCountry")
